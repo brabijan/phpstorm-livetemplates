@@ -10,7 +10,7 @@ use Nette;
 class DatabaseDeadlockException extends \RuntimeException
 {
 
-    public static function fromDriverException(\Exception $e) : DatabaseDeadlockException
+    public static function fromDriverException(\Exception $e)
     {
     }
 

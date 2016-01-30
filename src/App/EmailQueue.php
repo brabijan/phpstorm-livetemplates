@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php
 
 namespace App;
 
@@ -40,7 +40,7 @@ class EmailQueue implements Kdyby\RabbitMq\IConsumer
 
 
 
-    public function process(AMQPMessage $raw) : int
+    public function process(AMQPMessage $raw)
     {
         if (!is_array($msg = json_decode($raw->body, TRUE))) {
             return self::MSG_REJECT;

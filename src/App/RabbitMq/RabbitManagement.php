@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php
 
 namespace App\RabbitMq;
 
@@ -39,7 +39,7 @@ class RabbitManagement
 
 
 
-	public function isConsumerRunning($name) : bool
+	public function isConsumerRunning($name)
 	{
 		foreach ($this->getQueueOptions($name) as $queueOptions) {
 			if (!$queue = $this->fetchRabbitQueueStatus($queueOptions['name'])) {
@@ -60,7 +60,7 @@ class RabbitManagement
 	 * @param string $name
 	 * @return array
 	 */
-	private function getQueueOptions($name) : array
+	private function getQueueOptions($name)
 	{
 		/** @var Kdyby\RabbitMq\MultipleConsumer $consumer */
 		$consumer = $this->rabbit->getConsumer($name);

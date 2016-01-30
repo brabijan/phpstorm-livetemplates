@@ -47,7 +47,7 @@ class RabbitProducerMock extends Kdyby\RabbitMq\Producer
 	 * @internal do not use unless you're absolutely sure what you're doing
 	 * @return array
 	 */
-	public function processMessages() : array
+	public function processMessages()
 	{
 		$results = [];
 		while (count($this->messages) !== 0) {

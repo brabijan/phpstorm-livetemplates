@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php
 
 namespace App\RabbitMq;
 
@@ -71,7 +71,7 @@ abstract class BaseSubmitOrderQueue implements Kdyby\RabbitMq\IConsumer
 
 
 
-    public function process(AMQPMessage $message) : int
+    public function process(AMQPMessage $message)
     {
         try {
             if (!$request = Json::decode($message->body, Json::FORCE_ARRAY)) {
@@ -138,18 +138,18 @@ abstract class BaseSubmitOrderQueue implements Kdyby\RabbitMq\IConsumer
 
 
 
-    abstract protected function getQueue() : string;
+    abstract protected function getQueue();
 
 
 
-    abstract protected function processOrder(Order $order, array $options) : int;
+    abstract protected function processOrder(Order $order, array $options);
 
 
 
     /**
      * @throws TerminateException
      */
-    protected function restartJob(array $request, \Exception $exception = null, $message = null) : int
+    protected function restartJob(array $request, \Exception $exception = null, $message = null)
     {
         $this->logger->addError(
             sprintf(

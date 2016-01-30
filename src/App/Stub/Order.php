@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php
 
 namespace App\Stub;
 
@@ -7,13 +7,13 @@ namespace App\Stub;
 class Order
 {
 
-    public function getUser() : User
+    public function getUser()
     {
     }
 
 
 
-    public function getId() : int
+    public function getId()
     {
     }
 }

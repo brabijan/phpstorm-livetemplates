@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php
 
 namespace App\RabbitMq;
 
@@ -82,7 +82,7 @@ abstract class BufferedQueue extends Nette\Object implements Kdyby\RabbitMq\ICon
 
 
 
-	protected function prepare($type, $id, array $data) : string
+	protected function prepare($type, $id, array $data)
 	{
 		return Json::encode(['type' => $type, 'id' => $id] + $data);
 	}
@@ -112,6 +112,6 @@ abstract class BufferedQueue extends Nette\Object implements Kdyby\RabbitMq\ICon
 
 
 
-	abstract public function process(AMQPMessage $message) : int;
+	abstract public function process(AMQPMessage $message);
 
 }

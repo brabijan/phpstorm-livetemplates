@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php
 
 namespace App\Stub;
 
@@ -7,7 +7,7 @@ namespace App\Stub;
 class Identified
 {
 
-    public function getId() : int
+    public function getId()
     {
     }
 }

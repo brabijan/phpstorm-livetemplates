@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php
 
 namespace App\Stub;
 
@@ -9,7 +9,7 @@ use Nette\Security\User;
 class UserContext extends User
 {
 
-    public function passwordLessLogin(int $id)
+    public function passwordLessLogin($id)
     {
     }
 }
